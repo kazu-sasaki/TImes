@@ -1,0 +1,14 @@
+<div class="nested-fields form-inline">
+  <div class="form-group">
+    <p>章の番号</p>
+    <%= f.number_field :chapter_number,min:1, class: "form-control" %><br>
+    <p>章のタイトル</p>
+    <%= f.text_field :chapter_title, class: "form-control" %><br>
+    <%= link_to_remove_association "章を取り消す", f %>
+  </div>
+</div>
+
+    <%= f.fields_for :sectors do |sector| %>
+      <%= render 'sector_fields', f: sector %>
+    <% end %>
+      <%= link_to_add_association "本文の追加", f, :sectors %>

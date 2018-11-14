@@ -1,0 +1,26 @@
+   <h1>本の投稿</h1>
+
+<%= form_for @book do |f| %>
+
+   <h4>題名</h4>
+   <%= f.text_area :book_title %>
+   <h4>著者</h4>
+   <%= f.text_field :author %>
+   <h4>分類</h4>
+   <%= f.select :category, [["小説", "小説"],["自伝", "自伝"],["絵本", "絵本"]] %>
+   <h4>あらすじ</h4>
+   <%= f.text_field :sumary %>
+   <h4>金額</h4>
+   <%= f.text_field :book_price %>
+
+
+ <h4 id="chapter">
+   <%= f.fields_for :chapters do |chapter| %>
+     <%= render 'chapter_fields', f: chapter %>
+   <% end %>
+   <h4 id="links">
+     <%= link_to_add_association '章を追加',f, :chapters %>
+   </h4>
+   <%= f.submit '登録' %>
+ </h4>
+<% end %>

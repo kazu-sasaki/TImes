@@ -1,0 +1,6 @@
+<% @books.each do |f| %>
+ <p>タイトル<%= f.book_title %></p>
+  <%= link_to '詳細', book_path(f) %>
+  <%= link_to "削除", book_path(f),  method: :delete  %>
+  <%= link_to '編集', edit_book_path(f) %>
+<% end %>

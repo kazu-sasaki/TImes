@@ -1,0 +1,14 @@
+<p>本の回覧ページ</p>
+
+    <p>章の番号	</p>
+     <%= @chapter.chapter_number %>
+    <p>章のタイトル</p>
+     <%= @chapter.chapter_title %>
+
+    <% @chapter.sectors.each do |f| %>
+     <p>挿絵</p>
+     <p>sector<%= f.sector_number %></p>
+     <p>本文<%= f.sector_body %></p>
+    <% end %>
+
+  <%= link_to '目次', book_path(params[:id]) %>

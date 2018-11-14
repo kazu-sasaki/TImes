@@ -1,0 +1,22 @@
+
+<p>本の詳細</p>
+<p>題名</p>
+<p><%= @book.book_title %></p>
+
+   <h4>著者</h4>
+   <%= @book.author %>
+   <h4>分類</h4>
+   <%= @book.category %>
+   <h4>あらすじ</h4>
+   <%= @book.sumary %>
+   <h4>金額</h4>
+   <%= @book.book_price %>
+
+    <% @book.chapters.each do |f| %>
+    <p>目次</p>
+    <p>章</p>
+    <%= f.chapter_number %>
+    <p>章のタイトル</p>
+    <%= f.chapter_title %>
+	<%= link_to '読む', chapter_path(f) %>
+    <% end %>
