@@ -1,2 +1,11 @@
-<h1>Chapters#edit</h1>
-<p>Find me in app/views/chapters/edit.html.erb</p>
+<%= form_for :@chapter do |f| %>
+    <p>章の番号</p>
+    <%= f.number_field :chapter_number,min:1, class: "form-control" %><br>
+    <p>章のタイトル</p>
+    <%= f.text_field :chapter_title, class: "form-control" %><br>
+
+ <h4 id="sector">
+   </h4>
+   <%= f.submit '登録' %>
+ </h4>
+ <% end %>

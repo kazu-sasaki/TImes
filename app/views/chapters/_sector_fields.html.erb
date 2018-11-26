@@ -1,0 +1,10 @@
+<div class="nested-fields form-inline">
+  <div class="form-group">
+   <p>挿絵</p>
+   <p>番号</p>
+   <p><%= f.number_field :sector_number,min:1 %></p>
+   <p>本文</p>
+   <p><%= f.text_field :sector_body %></p>
+    <%= link_to_remove_association "節を取り消す", f %>
+  </div>
+</div>

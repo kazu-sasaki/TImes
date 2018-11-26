@@ -1,2 +1,9 @@
-<h1>Buys#index</h1>
-<p>Find me in app/views/buys/index.html.erb</p>
+<p>決済画面</p>
+<%@carts.each do |f|%>
+<p>タイトル<%=f.book.book_title%></p>
+<p>単価<%= f.book.book_price %></p>
+<%end%>
+<p>合計￥<%= @sum %></p>
+<%= form_tag(buys: :pay, method: :post, sum: @sum) do %>
+   <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_59be2ad4515cd8708814d04b"></script>
+<% end %>

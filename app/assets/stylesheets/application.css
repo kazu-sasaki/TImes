@@ -13,3 +13,122 @@
  *= require_tree .
  *= require_self
  */
+
+ .header {
+    background-color: #55ACED;
+  }
+
+  .left{
+    float: left;
+  }
+
+  .center{
+  text-align: center;
+  }
+  .right{
+    float: right;
+  }
+
+ .book {
+        width: auto;
+        height: auto;
+  }
+
+#overlay {
+    /* viewpointを相対位置にし、全画面表示にする */
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);  /* 背景を半透明にする */
+    display: none;  /* HTML要素を非表示にする */
+    z-index: 1  /* 「メインのHTML要素」よりもスタックレベルを高くする */
+   }
+
+#modalWindow {
+width: 350px;
+height: 150px;
+position: fixed; /* viewpointを相対位置にする */
+border: 2px solid #D04255;
+background-color: #FFF;
+display: none;
+z-index: 2  /* 「オーバーレのHTML要素」よりもスタックレベルを高くする */
+}
+
+  button {
+    width: 100px;
+    height: 50px;
+    font-size: 1.2em;
+    color: #D04255;
+    background-color: #FFF;
+    border: solid 2px #D04255;
+    border-radius: 3px;
+    transition: .4s;
+  }
+
+  button:hover {
+    background: #D04255;
+    color: #FFF;
+  }
+
+  .nav {
+    display: table;
+    width: 100%;
+    background: #F0F0F0;
+}
+.nav__item {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.nav__item + .nav__item {
+    border-left: 1px solid #CCC;
+}
+.nav__item a {
+    display: block;
+    padding: 1px 0;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+.backcoler {
+    color: rgb(138, 129, 129);
+}
+
+.book_background{
+    background-image: url(book.jpg);
+    background-size: cover;
+    background-position:  top;
+    }
+
+.cart_background{
+background-image: url(cart.jpg);
+background-size: cover;
+background-position:  top;
+}
+
+.bookshow_background{
+    background-image: url(bookshow.jpg);
+    background-size: cover;
+    background-position:  top;
+    }
+
+.pc_background{
+    background-image: url(pc.jpg);
+    background-size: cover;
+    background-position:  top;
+    }
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    }
+
+.book_index {
+    width: 350px;
+    height: 400px;
+  }

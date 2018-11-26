@@ -1,16 +1,11 @@
-
+<div class="bookshow_background">
 <p>本の詳細</p>
-<p>題名</p>
-<p><%= @book.book_title %></p>
-
-   <h4>著者</h4>
-   <%= @book.author %>
-   <h4>分類</h4>
-   <%= @book.category %>
-   <h4>あらすじ</h4>
-   <%= @book.sumary %>
-   <h4>金額</h4>
-   <%= @book.book_price %>
+    <%= attachment_image_tag @book, :book_image, format: 'jpeg', fallback: "no_image.jpg", class: "image", size: '100x100' %>
+<h4>題名  <%= @book.book_title %></h4>
+   <h4>著者  <%= @book.author %></h4>
+   <h4>分類  <%= @book.category %></h4>
+   <h4>あらすじ  <%= @book.sumary %></h4>
+   <h4>金額  <%= @book.book_price %></h4>
 
     <% @book.chapters.each do |f| %>
     <p>目次</p>
@@ -20,3 +15,12 @@
     <%= f.chapter_title %>
 	<%= link_to '読む', chapter_path(f) %>
     <% end %>
+    <br><%= link_to '一覧', books_path %>
+
+<br><button id="open">Open</button>
+<div id="overlay"></div>
+<div id="modalWindow">
+  <p>「Close」をクリックすると、オーレ―バイ/モーダルウィンドウを非表示にします。</p>
+  <button id="close">Close</button>
+</div>
+</div>

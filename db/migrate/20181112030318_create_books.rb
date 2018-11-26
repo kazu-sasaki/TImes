@@ -5,7 +5,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.string :book_title
       t.string :author
       t.string :category
-      t.string :book_image_id
+      t.string :book_image
       t.string :book_price
       t.text :sumary
       t.timestamps

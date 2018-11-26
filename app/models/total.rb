@@ -1,5 +1,4 @@
 class Total < ApplicationRecord
-    belongs_to :buy
-    belongs_to :cart
     belongs_to :book
+    belongs_to :buy
 end

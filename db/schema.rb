@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_062148) do
+ActiveRecord::Schema.define(version: 2018_11_21_051957) do
 
   create_table "books", force: :cascade do |t|
     t.string "book_title"
     t.string "author"
     t.string "category"
-    t.string "book_image"
-    t.string "book_price"
     t.text "sumary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "book_image_id"
+    t.integer "book_price"
   end
 
   create_table "buys", force: :cascade do |t|
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_11_12_062148) do
     t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "chapter_image_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -75,19 +76,18 @@ ActiveRecord::Schema.define(version: 2018_11_12_062148) do
   create_table "sectors", force: :cascade do |t|
     t.integer "sector_number"
     t.text "sector_body"
-    t.string "sector_image"
+    t.string "sector_image_id"
     t.integer "chapter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "totals", force: :cascade do |t|
-    t.integer "cart_id"
     t.integer "book_id"
-    t.integer "buy_id"
     t.integer "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -104,12 +104,13 @@ ActiveRecord::Schema.define(version: 2018_11_12_062148) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "user_image"
     t.string "tel"
     t.string "address"
     t.string "postal_code"
     t.string "nickname"
     t.string "furigana"
+    t.string "user_image_id"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

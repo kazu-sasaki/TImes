@@ -1,7 +1,12 @@
+<div class="bookshow_background">
    <h1>本の編集</h1>
 
 <%= form_for @book do |f| %>
-
+  <div class="field">
+   <h4>表紙</h4>
+   <%= attachment_image_tag @book, :book_image, format: 'jpeg', fallback: "no_image.jpg", class: "image", size: '100x100' %><br>
+   <%= f.attachment_field :book_image, placeholeder: "表紙" %>
+   </div>
   <div class="field">
    <h4>題名</h4>
    <%= f.text_area :book_title %>
@@ -33,3 +38,4 @@
    <%= f.submit '登録' %>
  </h4>
 <% end %>
+</div>

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.5.3'
 
 gem 'devise'
 gem 'ransack'
@@ -15,6 +15,8 @@ gem 'cocoon'
 gem 'kaminari'
 gem 'google-analytics-rails'
 gem 'pry-rails'
+gem 'react-rails'
+gem 'react_rails_modal'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'

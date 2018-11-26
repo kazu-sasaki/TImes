@@ -3,7 +3,8 @@ class BooksController < ApplicationController
     if user_signed_in?
      @userh = User.find(current_user.id)
     end
-    @books = Book.all
+    @books = Book.search(params[:search])
+    @cart = Cart.new
   end
 
   def show

@@ -1,2 +1,16 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="pc_background">
+<p>My Page</p>
+<p>名前</p>
+<li><%= @user.name %></li>
+<p>フリガナ</p>
+<li><%= @user.furigana %></li>
+<p>ニックネーム</p>
+<li><%= @user.nickname %></li>
+<p>郵便番号</p>
+<li><%= @user.postal_code %></li>
+<p>住所</p>
+<li><%= @user.address %></li>
+<p>電話番号</p>
+<li><%= @user.tel %></li>
+<%= link_to " 登録内容の変更", edit_user_registration_path(params[:id]) %>
+</div>

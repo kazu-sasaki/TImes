@@ -1,2 +1,8 @@
-<h1>Carts#index</h1>
-<p>Find me in app/views/carts/index.html.erb</p>
+<div class="cart_background">
+<%@carts.each do |f|%>
+<p>タイトル<%=f.book.book_title%></p>
+<p>価格<%= f.book.book_price %></p>
+  <%= link_to "削除", cart_path(f), method: :delete %>
+<%end%>
+  <br><%= link_to "購入", buys_path %>
+  </div>

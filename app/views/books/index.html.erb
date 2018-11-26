@@ -1,6 +1,22 @@
+<div class="bookshow_background">
+<div class="container">
 <% @books.each do |f| %>
- <p>タイトル<%= f.book_title %></p>
+  <div class="book_index">
+ <%= attachment_image_tag f, :book_image, format: 'jpeg', fallback: "no_image.jpg", class: "image", size: '200x200' %>
+ <p>タイトル <%= f.book_title %></p>
+ <p>著者 <%= f.author %></p>
+ <p>回覧時間<%= f.created_at %></p>
+  <% if current_user.try(:admin?) %>
   <%= link_to '詳細', book_path(f) %>
   <%= link_to "削除", book_path(f),  method: :delete  %>
-  <%= link_to '編集', edit_book_path(f) %>
+  <%= link_to '編集', edit_book_path(f) %><br>
+  <% else %>
+  <%end%>
+  <% if user_signed_in? %>
+  <%= link_to 'カートへ入れる', carts_path(user_id: current_user.id, book_id: f.id),method: :create %><br>
+  <% else %>
+  <% end %>
+  </div>
 <% end %>
+</div>
+</div>

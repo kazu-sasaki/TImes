@@ -8,12 +8,12 @@ class Book < ApplicationRecord
     accepts_nested_attributes_for :chapters, allow_destroy: true
     attachment :book_image
 
-    def self.search(search) #self.でクラスメソッドとしている
-            if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
+    def self.search(search)
+            if search
                   Book.where(['book_title LIKE ?', "%#{search}%"])
-    
+
             else
-                  Book.all #全て表示。
+                  Book.all
             end
           end
 end
