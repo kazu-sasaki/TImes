@@ -1,6 +1,6 @@
 class CreateBooks < ActiveRecord::Migration[5.2]
   def change
-    create_table :books do |t|
+    create_table :books, :options => 'ENGINE=InnoDB ROW_FORMAT=DYNAMIC' do |t|
 #追加項目
       t.string :book_title
       t.string :author

@@ -1,6 +1,6 @@
 class CreateChapters < ActiveRecord::Migration[5.2]
   def change
-    create_table :chapters do |t|
+    create_table :chapters, :options => 'ENGINE=InnoDB ROW_FORMAT=DYNAMIC' do |t|
       #追加項目
             t.integer :chapter_number
             t.integer :chapter_title

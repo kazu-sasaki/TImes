@@ -1,6 +1,6 @@
 class CreateReads < ActiveRecord::Migration[5.2]
   def change
-    create_table :reads do |t|
+    create_table :reads, :options => 'ENGINE=InnoDB ROW_FORMAT=DYNAMIC' do |t|
       #追加項目
             t.integer :chapter_id
             t.integer :sector_id
