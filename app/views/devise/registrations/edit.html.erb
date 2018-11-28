@@ -46,6 +46,11 @@
         <%= f.label :パスワード確認 %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "password_confirm",class: "form-control" %>
       </div>
+
+    <div class="pass_edit_field">
+      <p><b>現在登録しているパスワード</b></p>
+      <%= f.password_field :current_password, autocomplete: "current-password", class: " form-control" %>
+    </div>
       <br>
       <div class="text-right">
         <!-- <%= f.submit "会員登録する" %> -->

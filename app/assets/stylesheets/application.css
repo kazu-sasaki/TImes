@@ -104,11 +104,6 @@ z-index: 2  /* 「オーバーレのHTML要素」よりもスタックレベル�
     background-position:  top;
     }
 
-.cart_background{
-background-image: url(/images/cart.jpg);
-background-size: cover;
-background-position:  top;
-}
 
 .container {
     display: flex;

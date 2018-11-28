@@ -23,7 +23,7 @@
     <li class="nav__item"><a href="#"><%= link_to 'トップ画面', root_path, class: 'home' %></a></li>
     <li class="nav__item"><a href="#"><%= link_to 'マイページ', user_path(current_user.id), class: 'my_page' %></a></li>
     <li class="nav__item"><a href="#"><%= link_to "カート", carts_path  %></a></li>
-    <li class="nav__item"><a href="#"><%= link_to '購入した本', totals_path, class: 'my_book' %></a></li>
+    <li class="nav__item"><a href="#"><%= link_to '購入した本', totals_path, class: 'my_book' %></a></li></span>
     <li class="nav__item"><a href="#"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout' %></a></li>
 </ul>
      <% if current_user.try(:admin?) %>
