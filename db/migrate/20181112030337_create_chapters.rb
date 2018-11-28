@@ -5,8 +5,10 @@ class CreateChapters < ActiveRecord::Migration[5.2]
             t.integer :chapter_number
             t.integer :chapter_title
             t.integer :book_id
+            t.string :chapter_image_id
 
       t.timestamps
     end
   end
 end
+

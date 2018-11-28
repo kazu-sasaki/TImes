@@ -99,28 +99,16 @@ z-index: 2  /* 「オーバーレのHTML要素」よりもスタックレベル�
 }
 
 .book_background{
-    background-image: url(book.jpg);
+    background-image: url(/images/book.jpg);
     background-size: cover;
     background-position:  top;
     }
 
 .cart_background{
-background-image: url(cart.jpg);
+background-image: url(/images/cart.jpg);
 background-size: cover;
 background-position:  top;
 }
-
-.bookshow_background{
-    background-image: url(bookshow.jpg);
-    background-size: cover;
-    background-position:  top;
-    }
-
-.pc_background{
-    background-image: url(pc.jpg);
-    background-size: cover;
-    background-position:  top;
-    }
 
 .container {
     display: flex;
@@ -132,3 +120,4 @@ background-position:  top;
     width: 350px;
     height: 400px;
   }
+

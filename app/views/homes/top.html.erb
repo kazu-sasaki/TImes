@@ -1,10 +1,9 @@
 <div class="bookshow_background">
-
 <div class="container">
         <% @books.each do |f| %>
 
   <div class="book_index">
-                <%= attachment_image_tag f, :book_image, format: 'jpeg', fallback: "no_image.jpg", class: "image", size: '200x200' %>
+                <%= attachment_image_tag f, :book_image, format: 'jpg', fallback: "no_image.jpg", class: "image", size: '200x200' %>
                 <p>タイトル <%= f.book_title %></p>
                 <p>著者 <%= f.author %></p>
                 <%= link_to '本の内容', book_path(f) %>

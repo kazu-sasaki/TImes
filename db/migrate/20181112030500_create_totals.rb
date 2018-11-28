@@ -6,7 +6,9 @@ class CreateTotals < ActiveRecord::Migration[5.2]
             t.integer :book_id
             t.integer :buy_id
             t.integer :total_price
+            t.integer :user_id
       t.timestamps
     end
   end
 end
+

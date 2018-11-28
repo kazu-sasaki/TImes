@@ -4,7 +4,7 @@ class CreateSectors < ActiveRecord::Migration[5.2]
       #追加項目
             t.integer  :sector_number
             t.text :sector_body
-            t.string :sector_image
+            t.string :sector_image_id
             t.integer :chapter_id
 
       t.timestamps
