@@ -1,21 +1,19 @@
  <div class="col-lg-12" style="background-color: #C6CFCC;">
-<p>本の回覧ページ</p>
-    <p>章の番号 </p>
-     <%= @chapter.chapter_number %>
-    <p>章のタイトル</p>
-     <%= @chapter.chapter_title %>
+    <div class="center">
+    <p><%= @chapter.chapter_number %>章</p>
+    <p>タイトル<%= @chapter.chapter_title %></p>
 
     <% @chapter.sectors.each do |f| %>
-     <p>挿絵</p>
     <% if f.try(:sector_image) %>
     <%= attachment_image_tag f, :sector_image, format: 'jpeg', fallback: "no_image.jpg", class: "image", size: '100x100' %>
     <%else%>
     <%end%>
-     <p>sector<%= f.sector_number %></p>
-     <p>本文<%= f.sector_body %></p>
-    <% end %>
-      <%= link_to '編集', edit_chapter_path(@chapter.id) %><br>
+     <p><%= f.sector_number %></p>
+     <p><%= f.sector_body %></p>
+<%end%>
+      <%= link_to '編集', edit_chapter_path(f) %>
 
+<br></div>
 <% if @back_chapter.present? %>
   <div class="left">
   <%= link_to '戻る', chapter_path(@back_chapter) %>

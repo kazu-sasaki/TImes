@@ -8,19 +8,9 @@
    <h4>金額  <%= @book.book_price %></h4>
 
     <% @book.chapters.each do |f| %>
-    <p>目次</p>
-    <p>章</p>
-    <%= f.chapter_number %>
-    <p>章のタイトル</p>
-    <%= f.chapter_title %>
-	<%= link_to '読む', chapter_path(f) %>
+    <h4>目次</h4>
+    <p><%= f.chapter_number %>章</p>
+	    <p><%= f.chapter_title %></p>
+	<%= link_to 'ここから読む', sector_path(f) %>
     <% end %>
-    <br><%= link_to '一覧', books_path %>
-
-<br><button id="open">Open</button>
-<div id="overlay"></div>
-<div id="modalWindow">
-  <p>「Close」をクリックすると、オーレ―バイ/モーダルウィンドウを非表示にします。</p>
-  <button id="close">Close</button>
-</div>
 </div>
