@@ -11,6 +11,22 @@
     <h4>目次</h4>
     <p><%= f.chapter_number %>章</p>
 	    <p><%= f.chapter_title %></p>
+      　　　<p>読まれた回数</P>
+    <% if f.try(:read_count) %>
+                      <%= f.read_count %>
+<%else%>
+    <%end%>
+            <p>読書時間</p>
+    <% if f.try(:read_time) %>
+                      <%= f.read_time %>
+<%else%>
+    <%end%>
+
+
+    <% if user_signed_in? %>
 	<%= link_to 'ここから読む', sector_path(f) %>
+   
+    <% else %>
+    <% end %>   
     <% end %>
 </div>

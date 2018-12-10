@@ -1,7 +1,8 @@
 <div class="bookshow_background">
 <p>購入した本</p>
 <%@total.each do |f|%>
-<p>タイトル<%=f.book.book_title%></p>
-<%= link_to '読む', book_path(f.book.id) %>
+<p>タイトル</p>
+<%=f.book.book_title%>
+<%= link_to '読む', book_path(f.book_id) %>
 <%end%>
 </div>

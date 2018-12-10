@@ -1,4 +1,4 @@
 class Buy < ApplicationRecord
     belongs_to :user
-    has_many :totals
+    belongs_to :book
 end

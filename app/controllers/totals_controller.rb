@@ -1,7 +1,9 @@
 class TotalsController < ApplicationController
   def index
     @comment = Comment.new
-    @total = Total.where(user_id: current_user.id)
+    @total = Buy.where(user_id: current_user.id)
+   
+    @books = Book.all
   end
 
   def create
@@ -13,8 +15,8 @@ class TotalsController < ApplicationController
   end
 
   private
-  def comment_params
-      params.require(:comment).permit(:comment,
-     )
-  end
+  def buy_params
+    params.require(:buy).permit(books_attributes:[:id, :book_title]
+   )
+end
 end

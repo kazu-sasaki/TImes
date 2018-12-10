@@ -20,7 +20,7 @@ class BuysController < ApplicationController
 #購入情報の保存
     @carts = Cart.where(params[:id])
      @carts.each do |t|
-     buy = Buy.new(book_id: t[:book_id], user_id: current_user.id)
+     buy = Buy.new(book_id: t.book_id, user_id: current_user.id)
      buy.save
      end
 #カートの削除

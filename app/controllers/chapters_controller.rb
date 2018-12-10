@@ -7,8 +7,9 @@ class ChaptersController < ApplicationController
     @sector = Sector.where(chapter_id: @chapter.id)
   end
 
-  def read
-    binding.pry
+  def index
+    
+    redirect_to books_path
   end
 
   def edit
@@ -27,7 +28,8 @@ class ChaptersController < ApplicationController
   private
   def chapter_params
       params.require(:cahpter).permit(:chapter_number,:chapter_title,
-         sectors_attributes:[:id, :_destroy, :sector_number, :sector_body, :sector_image]
+         sectors_attributes:[:id, :_destroy, :sector_number, :sector_body, :sector_image],
+         reads_attributes:[:id, :_destroy, :read_time, :read_count, :siori]
      )
   end
 end
